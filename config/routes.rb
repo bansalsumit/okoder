@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :questions, only: [:show] do
     member do
       post 'follow_topic'
+      post 'follow_user'
     end
   end
   # You can have the root of your site routed with "root"

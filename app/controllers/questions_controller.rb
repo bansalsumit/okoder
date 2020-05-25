@@ -15,4 +15,12 @@ class QuestionsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def follow_user
+    @question = Question.find(params[:id])
+    current_user.topics << @question.user
+    if current_user.save
+      redirect_to question_path(@question)
+    end
+  end
 end

@@ -4,3 +4,6 @@
 <%= form_tag("/questions/#{@question.id}/follow_topic", method: "post") do %>
   <%= submit_tag "Follow the Topic", class: 'follow_topic' %>
 <% end %>
+<%= form_tag("/questions/#{@question.id}/follow_user", method: "post") do %>
+  <%= submit_tag "Follow the User", class: 'follow_user' %>
+<% end %>
