@@ -1,6 +1,12 @@
 <h3>Question</h3>
 <p>question: <%= @question.question %></p>
 <p>topic: <%= @question.topic.title %></p>
+<h3>Answers</h3>
+<ul>
+  <% @answers.each do |answer| %>
+    <li><%= link_to answer.answer, nil, class: 'answer' %></li>
+  <% end %>
+</ul>
 <%= form_tag("/questions/#{@question.id}/follow_topic", method: "post") do %>
   <%= submit_tag "Follow the Topic", class: 'follow_topic' %>
 <% end %>

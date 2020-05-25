@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answers = @question.answers
     unless @question.present?
       flash.now[:alert] = "Your book was not found"
       redirect_to root_path and return
