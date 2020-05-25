@@ -1,0 +1,6 @@
+<h3>Question</h3>
+<p>question: <%= @question.question %></p>
+<p>topic: <%= @question.topic.title %></p>
+<%= form_tag("/questions/#{@question.id}/follow_topic", method: "post") do %>
+  <%= submit_tag "Follow the Topic", class: 'follow_topic' %>
+<% end %>

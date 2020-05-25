@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   root to: 'home#index'
   devise_for :users
+  resources :questions, only: [:show] do
+    member do
+      post 'follow_topic'
+    end
+  end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
