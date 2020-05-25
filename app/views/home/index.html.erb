@@ -1,6 +1,14 @@
+<h2>Questions</h2>
+<ul>
+  <% @questions.each do |question, index| %>
+    <li>
+      <%= link_to question.question, nil, class: 'question' %>
+    </li>
+  <% end %>
+</ul>
 <% if current_user.blank? %>
-<%= link_to 'SignUp', new_user_registration_path %>
-<%= link_to 'SignIn', new_user_session_path %>
+  <%= link_to 'SignUp', new_user_registration_path %>
+  <%= link_to 'SignIn', new_user_session_path %>
 <% else %>
-<%= link_to 'SignOut', destroy_user_session_path, :method=>'delete' %>
+  <%= link_to 'SignOut', destroy_user_session_path, :method=>'delete' %>
 <% end %>
