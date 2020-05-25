@@ -2,7 +2,7 @@
 <ul>
   <% @questions.each do |question, index| %>
     <li>
-      <%= link_to question.question, nil, class: 'question' %>
+      <%= link_to question.question, question_path(question), class: 'question' %>
     </li>
   <% end %>
 </ul>
