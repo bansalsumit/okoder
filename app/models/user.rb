@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   has_and_belongs_to_many :topics
   has_many :questions
+  has_many :answers
 end
