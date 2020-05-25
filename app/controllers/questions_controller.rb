@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
 
   def follow_user
     @question = Question.find(params[:id])
-    current_user.topics << @question.user
+    current_user.follow << @question.user.id
     if current_user.save
       redirect_to question_path(@question)
     end

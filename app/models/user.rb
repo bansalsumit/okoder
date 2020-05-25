@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :topics
   has_many :questions
   has_many :answers
+
+  def following
+    User.find(self.follow)
+  end
 end
